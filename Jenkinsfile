@@ -20,7 +20,7 @@ mvnDeliveryPipeline {
      label= 'LINUX'
      org = 'sivisoft'
      tag = 'latest'
-     appName =  '${env.JOB_NAME}'
+     appName =  'demo-java'
      workspace =  '${env.WORKSPACE}'
      innerPort= '8080'
      outerPort= '8080'
