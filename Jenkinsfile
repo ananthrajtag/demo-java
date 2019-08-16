@@ -4,22 +4,27 @@
     //name = 'git'
 //}
 
-DeliveryPipeline {
+mvnDeliveryPipeline {
      branch = 'master'
      scmUrl = 'https://github.com/ananthrajtag/demo-java.git'
      GitCredentials = 'SiviSoft-Dev'
+     DockerCredentials = 'docker-credentials'
+     NODE_VERSION = '10.16.2'
+     BUILD_TOOL = 'maven'
      email = 'tag.ananthraj@gmail.com'
      serverPort = '8080'
      APP_PORT ='8080:8080'
-     developmentServer = 'test servere'
-     stagingServer = 'test'
-     productionServer = 'test'
-     BUILD_TOOL = maven
+     developmentServer = 'CERT'
+     stagingServer = 'CERT'
+     productionServer = 'CERT'
      label= 'LINUX'
      org = 'sivisoft'
+     tag = 'latest'
      appName =  '${env.JOB_NAME}'
+     workspace =  '${env.WORKSPACE}'
      innerPort= '8080'
      outerPort= '8080'
+     JENKINS_NOTIFICATIONS_TO = 'tag.ananthraj@gmail.com'
     
    /* imageTag :'demo-java:latest' 
     branch :'master'
