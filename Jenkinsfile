@@ -1,6 +1,8 @@
+@Library('sdx_workflow_lib') _
+
 DeliveryPipeline {
     branch = 'master'
-    scmUrl = 'ssh://git@myScmServer.com/repos/myRepo.git'
+    scmUrl = 'https://github.com/ananthrajtag/demo-java.git'
     email = 'tag.ananthraj@gmail.com'
     serverPort = '8080'
     APP_PORT ='8080:8080'
