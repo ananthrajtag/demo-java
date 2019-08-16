@@ -1,12 +1,13 @@
 @Library('sdx_workflow_lib') _
 
 //jenkinsPlugin {
-    name = 'git'
+    //name = 'git'
 //}
 
 DeliveryPipeline {
      branch = 'master'
      scmUrl = 'https://github.com/ananthrajtag/demo-java.git'
+     GitCredentials = 'SiviSoft-Dev'
      email = 'tag.ananthraj@gmail.com'
      serverPort = '8080'
      APP_PORT ='8080:8080'
