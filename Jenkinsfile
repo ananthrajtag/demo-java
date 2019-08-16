@@ -7,5 +7,12 @@ DeliveryPipeline {
     developmentServer = ''
     stagingServer = ''
     productionServer = ''
+    BUILD_TOOL = maven
+    label= 'LINUX'
+    org = 'sivisoft'
+    appName =  "${env.JOB_NAME}"
+    innerPort= '8080'
+    outerPort= '8080'
+    imageTag =
     
 }
