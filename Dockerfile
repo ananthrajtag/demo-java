@@ -6,7 +6,7 @@ RUN echo "export JAVA_OPTS=\"-Dapp.env=staging\"" > /usr/local/tomcat/bin/setenv
 
 
 
-COPY target/demo.war  /usr/local/tomcat/webapps/demo.war
+COPY demo-java_master/target/demo.war  /usr/local/tomcat/webapps/demo.war
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
