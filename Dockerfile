@@ -14,6 +14,6 @@ ENV JAVA_OPTS=$JAVA_OPTS
 ENV somEnvironment=$somEnvironment
 ENV somDomainUrl=$somDomainUrl
 
-copy target/demo.war demo.war
+copy **/target/demo.war demo.war
 
 CMD ["java", "-jar", "demo.war" ]
