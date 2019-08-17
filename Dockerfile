@@ -3,11 +3,16 @@
 #RUN pwd
 #COPY ./target/demo.war /usr/local/tomcat/webapps/ROOT.war
 #CMD ["catalina.sh","run"]
-FROM sivisoft/openjdk:8
+#FROM sivisoft/openjdk:8
 
-VOLUME /tmp
 #RUN apt-get update && apt-get install -y vim
 
-copy target/demo.war demo.war
+#copy target/demo.war demo.war
 
-CMD ["java", "-jar", "demo.war" ]
+ECMD ["java", "-jar", "demo.war" ]
+
+FROM sivisoft/openjdk:8
+RUN adduser -D sdx-user 
+USER sdx-user 
+ADD target/demo.war app.war
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","app.war"]
