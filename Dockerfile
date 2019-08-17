@@ -9,7 +9,7 @@
 
 #copy target/demo.war demo.war
 
-ECMD ["java", "-jar", "demo.war" ]
+#ECMD ["java", "-jar", "demo.war" ]
 
 FROM sivisoft/openjdk:8
 RUN adduser -D sdx-user 
