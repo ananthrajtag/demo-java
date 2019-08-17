@@ -1,16 +1,9 @@
-FROM tomcat:8.5
-MAINTAINER Tung Nguyen <tongueroo@gmail.com>
+FROM tomcat:8.0.20-jre8
 
-# Debugging tools: A few ways to handle debugging tools.
-# Trade off is a slightly more complex volume mount vs keeping the image size down.
-RUN apt-get update && \
-  apt-get install -y \
-    net-tools \
-    tree \
-    vim && \
-  rm -rf /var/lib/apt/lists/* && apt-get clean && apt-get purge
-
+#RUN mkdir /usr/local/tomcat/webapps/myapp
 RUN echo "export JAVA_OPTS=\"-Dapp.env=staging\"" > /usr/local/tomcat/bin/setenv.sh
+#COPY /target/my-app-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/myapp/
+
 
 
 COPY target/demo.war  /usr/local/tomcat/webapps/demo.war
