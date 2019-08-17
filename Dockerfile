@@ -12,8 +12,8 @@ RUN apt-get update && \
 
 RUN echo "export JAVA_OPTS=\"-Dapp.env=staging\"" > /usr/local/tomcat/bin/setenv.sh
 
-ARG jar_file=/target/demo.war
-COPY ${jar_file} /usr/local/tomcat/webapps/demo.war
+
+COPY *.war /usr/local/tomcat/webapps/demo.war
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
